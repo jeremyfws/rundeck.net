@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+
+// ReSharper disable CheckNamespace
+// ReSharper disable InconsistentNaming
 
 namespace RundeckNET.APIObjects
 {
@@ -15,8 +14,8 @@ namespace RundeckNET.APIObjects
 
         public List<Job> GetJobs()
         {
-            RundeckClient c = new RundeckClient();
-            return c.GetRequest<List<Job>>(string.Format("project/{0}/jobs", name));
+            var c = new RundeckClient();
+            return c.GetRequest<List<Job>>($"project/{name}/jobs");
         }
        
     }
