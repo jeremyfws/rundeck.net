@@ -51,7 +51,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="RundeckClientTests.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="ExecutionsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -59,6 +59,11 @@
       <Project>{d5d87bbe-bfdb-4234-8f35-b1ed72925433}</Project>
       <Name>Rundeck.NET</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Rundeck.NET_Sample\App.config">
+      <Link>App.config</Link>
+    </None>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

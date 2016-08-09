@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+// ReSharper disable InconsistentNaming
 
 namespace RundeckNET.APIObjects
 {
@@ -27,6 +26,13 @@ namespace RundeckNET.APIObjects
             ///api/1/job/[ID]/run
             var c = new RundeckClient();
             c.PostRequest<object>("job/" + this.id+"/run");
+        }
+
+        public List<Execution> GetExecutions()
+        {
+            var c = new RundeckClient();
+            var resp = c.GetRequest<ExecutionResponse>($"job/{id}/executions");
+            return resp.executions.ToList();
         }
     }
 }
